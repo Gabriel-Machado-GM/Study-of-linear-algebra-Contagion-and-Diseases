@@ -2,18 +2,20 @@ import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
-# Total population, N.
-N = 1000
-# Initial number of infected and recovered individuals, I0 and R0.
-I0, R0 = 1, 0
-# Everyone else, S0, is susceptible to infection initially.
-S0 = N - I0 - R0
-# Contact rate, beta, and mean recovery rate, gamma, (in 1/days).
-beta, gamma = 0.2, 1./10 
-# A grid of time points (in days)
-t = np.linspace(0, 160, 160)
+####################################################
 
-# The SIR model differential equations.
+# N = População total.
+N = 1000
+# I0, R0 = Número inicial de indivíduos infectados e recuperados respectivamente.
+I0, R0 = 1, 0
+# S0 = Qualquer um é sucetível a infecção inicialmente, não há anticorpos. 
+S0 = N - I0 - R0
+# Beta = Taxa de Contágio, Gama = média da recuperação de um indivíduo(1/dias).
+beta, gamma = 0.2, 1./10 
+# Uma rede de espaço de tempo em dias.
+t = np.linspace(0, 356, 365)
+
+# Equações diferenciais do modelo SIR. 
 def deriv(y, t, N, beta, gamma):
     S, I, R = y
     dSdt = -beta * S * I / N
@@ -21,13 +23,13 @@ def deriv(y, t, N, beta, gamma):
     dRdt = gamma * I
     return dSdt, dIdt, dRdt
 
-# Initial conditions vector
+# Condições iniciais do vetor.
 y0 = S0, I0, R0
-# Integrate the SIR equations over the time grid, t.
+# Integração do modelo de equações diferenciais do SIR na rede de tempo(t).
 ret = odeint(deriv, y0, t, args=(N, beta, gamma))
 S, I, R = ret.T
 
-# Plot the data on three separate curves for S(t), I(t) and R(t)
+# Coloque os dados em três curvas distintas para S(t), I(t) e R(t)
 fig = plt.figure(facecolor='w')
 ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t, S/1000, 'b', alpha=0.5, lw=2, label='Suscetível')
@@ -45,11 +47,13 @@ for spine in ('top', 'right', 'bottom', 'left'):
     ax.spines[spine].set_visible(False)
 plt.show()
 
+####################################################
+
 N1 = 2000
 I1, R1 = 500, 0
 S1 = N1 - I1 - R1
 beta1, gamma1 = 0.2, 1./10 
-t1 = np.linspace(0, 30, 30)
+t1 = np.linspace(0, 60, 60)
 def deriv(y1, t1, N1, beta1, gamma1):
     S1, I1, R1 = y1
     dSdt1 = -beta1 * S1 * I1 / N1
@@ -69,7 +73,81 @@ ax.plot(t1, I1/1000, 'r', alpha=0.5, lw=2, label='Infectado')
 ax.plot(t1, R1/1000, 'g', alpha=0.5, lw=2, label='Recuperado e imune')
 ax.set_xlabel('Tempo /dias')
 ax.set_ylabel('Número (1000s)')
-ax.set_ylim(0,1.2)
+ax.set_ylim(0,1.75)
+ax.yaxis.set_tick_params(length=0)
+ax.xaxis.set_tick_params(length=0)
+ax.grid(b=True, which='major', c='w', lw=2, ls='-')
+legend = ax.legend()
+legend.get_frame().set_alpha(0.5)
+for spine in ('top', 'right', 'bottom', 'left'):
+    ax.spines[spine].set_visible(False)
+plt.show()
+
+####################################################
+
+N2 = 1000
+I2, R2 = 200, 0
+S2 = N2 - I2 - R2
+beta2, gamma2 = 0.03, 2./10 
+t2 = np.linspace(0, 50, 50)
+def deriv(y2, t2, N2, beta2, gamma2):
+    S2, I2, R2 = y2
+    dSdt2 = -beta2 * S2 * I2 / N2
+    dIdt2 = beta2 * S2 * I2 / N2 - gamma2 * I2
+    dRdt2 = gamma2 * I2
+    return dSdt2, dIdt2, dRdt2
+
+y2 = S2, I2, R2
+
+ret2 = odeint(deriv, y2, t2, args=(N2, beta2, gamma2))
+S2, I2, R2 = ret2.T
+
+fig2 = plt.figure(facecolor='w')
+ax = fig2.add_subplot(111, facecolor='#dddddd', axisbelow=True)
+ax.plot(t2, S2/1000, 'b', alpha=0.5, lw=2, label='Suscetível')
+ax.plot(t2, I2/1000, 'r', alpha=0.5, lw=2, label='Infectado')
+ax.plot(t2, R2/1000, 'g', alpha=0.5, lw=2, label='Recuperado e imune')
+ax.set_xlabel('Tempo /dias')
+ax.set_ylabel('Número (1000s)')
+ax.set_ylim(0,1)
+ax.yaxis.set_tick_params(length=0)
+ax.xaxis.set_tick_params(length=0)
+ax.grid(b=True, which='major', c='w', lw=2, ls='-')
+legend = ax.legend()
+legend.get_frame().set_alpha(0.5)
+for spine in ('top', 'right', 'bottom', 'left'):
+    ax.spines[spine].set_visible(False)
+plt.show()
+
+####################################################
+
+#COVID 21/10/2020 (Brasil)
+
+N3 = 212205021
+I3, R3 = 5276942, 4721593
+S3 = N3 - I3 - R3
+beta3, gamma3 = 0.93, 1./10
+t3 = np.linspace(0, 60, 60)
+def deriv(y3, t3, N3, beta3, gamma3):
+    S3, I3, R3 = y3
+    dSdt3 = -beta3 * S3 * I3 / N3
+    dIdt3 = beta3 * S3 * I3 / N3 - gamma3 * I3
+    dRdt3 = gamma3 * I3
+    return dSdt3, dIdt3, dRdt3
+
+y3 = S3, I3, R3
+
+ret3 = odeint(deriv, y3, t3, args=(N3, beta3, gamma3))
+S3, I3, R3 = ret3.T
+
+fig3 = plt.figure(facecolor='w')
+ax = fig3.add_subplot(111, facecolor='#dddddd', axisbelow=True)
+ax.plot(t3, S3/10000000, 'b', alpha=0.5, lw=2, label='Suscetível')
+ax.plot(t3, I3/10000000, 'r', alpha=0.5, lw=2, label='Infectado')
+ax.plot(t3, R3/10000000, 'g', alpha=0.5, lw=2, label='Recuperado e imune')
+ax.set_xlabel('Tempo /dias')
+ax.set_ylabel('Número (10000000s)')
+ax.set_ylim(0,25)
 ax.yaxis.set_tick_params(length=0)
 ax.xaxis.set_tick_params(length=0)
 ax.grid(b=True, which='major', c='w', lw=2, ls='-')
