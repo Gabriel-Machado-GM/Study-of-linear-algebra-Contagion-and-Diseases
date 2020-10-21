@@ -45,11 +45,11 @@ for spine in ('top', 'right', 'bottom', 'left'):
     ax.spines[spine].set_visible(False)
 plt.show()
 
-N1 = 27890
-I1, R1 = 10, 0
+N1 = 2000
+I1, R1 = 500, 0
 S1 = N1 - I1 - R1
-beta1, gamma1 = 0.4, 2./10 
-t1 = np.linspace(0, 365, 365)
+beta1, gamma1 = 0.2, 1./10 
+t1 = np.linspace(0, 30, 30)
 def deriv(y1, t1, N1, beta1, gamma1):
     S1, I1, R1 = y1
     dSdt1 = -beta1 * S1 * I1 / N1
@@ -63,7 +63,7 @@ ret1 = odeint(deriv, y1, t1, args=(N1, beta1, gamma1))
 S1, I1, R1 = ret1.T
 
 fig1 = plt.figure(facecolor='w')
-ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)
+ax = fig1.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t1, S1/1000, 'b', alpha=0.5, lw=2, label='Suscetível')
 ax.plot(t1, I1/1000, 'r', alpha=0.5, lw=2, label='Infectado')
 ax.plot(t1, R1/1000, 'g', alpha=0.5, lw=2, label='Recuperado e imune')
