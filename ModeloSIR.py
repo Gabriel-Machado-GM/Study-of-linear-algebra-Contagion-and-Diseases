@@ -246,5 +246,7 @@ plt.show()
     #https://www.ibge.gov.br/apps/populacao/projecao/; 
     #https://www.gazetadopovo.com.br/republica/breves/taxa-de-recuperacao-da-covid-19-e-maior-no-brasil-que-espanha-italia-e-eua/;
     #https://g1.globo.com/bemestar/coronavirus/noticia/2020/10/13/taxa-de-transmissao-da-covid-19-fica-abaixo-de-1-pela-terceira-semana-seguida-no-brasil-aponta-imperial-college.ghtml
+    #http://www.uberaba.mg.gov.br/portal/conteudo,49499
+    #https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/vigilancia_em_saude/doencas_e_agravos/coronavirus/index.php?p=291766
     
 ##############################################################################
