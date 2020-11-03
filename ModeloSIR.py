@@ -101,7 +101,7 @@ S1 = N1 - I1 - R1
 beta1, gamma1 = 0.2, 1./10 
 
 # Rede de tempo.
-t1 = np.linspace(0, 60, 60)
+t1 = np.linspace(0, 365, 365)
 
 # Equações diferenciais do modelo SIR.
 def deriv(y1, t1, N1, beta1, gamma1):
@@ -205,7 +205,7 @@ S3 = N3 - I3 - R3
 beta3, gamma3 = 0.3, 2/10 
 
 # Rede de tempo.
-t3 = np.linspace(0, 50, 50)
+t3 = np.linspace(0, 100, 100)
 
 # Equações diferenciais do modelo SIR.
 def deriv(y3, t3, N3, beta3, gamma3):
@@ -257,7 +257,7 @@ S4 = N4 - I4 - R4
 beta4, gamma4 = 0.93, 0.8/10 
 
 # Rede de tempo.
-t4 = np.linspace(0, 60, 60) 
+t4 = np.linspace(0, 100, 100) 
 
 # Equações diferenciais do modelo SIR.
 def deriv(y4, t4, N4, beta4, gamma4):
@@ -306,10 +306,10 @@ I5, R5 = 46643798, 31156914
 S5 = N5 - I5 - R5 
 
 # Taxas técnicas.
-beta5, gamma5 = 0.71, 0.64/10 
+beta5, gamma5 = 0.73, 0.64/10 
 
 # Rede de tempo.
-t5 = np.linspace(0, 60, 60) 
+t5 = np.linspace(0, 100, 100) 
 
 # Equações diferenciais do modelo SIR.
 def deriv(y5, t5, N5, beta5, gamma5):
@@ -329,12 +329,12 @@ S5, I5, R5 = ret5.T
 # Plotando a simulação.
 fig5 = plt.figure(facecolor='w')
 ax = fig5.add_subplot(111, facecolor='#dddddd', axisbelow=True)
-ax.plot(t5, S5/500000000, 'b', alpha=0.5, lw=2, label='Suscetível')
-ax.plot(t5, I5/500000000, 'r', alpha=0.5, lw=2, label='Infectado')
-ax.plot(t5, R5/500000000, 'g', alpha=0.5, lw=2, label='Recuperado e imune')
+ax.plot(t5, S5/100000000, 'b', alpha=0.5, lw=2, label='Suscetível')
+ax.plot(t5, I5/100000000, 'r', alpha=0.5, lw=2, label='Infectado')
+ax.plot(t5, R5/100000000, 'g', alpha=0.5, lw=2, label='Recuperado e imune')
 ax.set_xlabel('Tempo /dias')
-ax.set_ylabel('Número (500.000.000s)')
-ax.set_ylim(0,25)
+ax.set_ylabel('Número (100.000.000s)')
+ax.set_ylim(0,100)
 ax.yaxis.set_tick_params(length=0)
 ax.xaxis.set_tick_params(length=0)
 ax.grid(b=True, which='major', c='w', lw=2, ls='-')
@@ -358,5 +358,6 @@ plt.show()
     #https://veja.abril.com.br/brasil/covid-19-taxa-de-recuperados-no-brasil-e-maior-do-que-a-mundial/
     #https://www.paho.org/pt/covid19
     #https://covid19.who.int/table
+    #https://ciis.fmrp.usp.br/covid19/epcalc/public/index.html
     
 ##############################################################################
