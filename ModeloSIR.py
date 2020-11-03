@@ -39,7 +39,7 @@ beta, gamma = 0.2, 1./10
 ##############################################################################
 
 # Uma rede de espaço de tempo em dias.
-t = np.linspace(0, 356, 365)
+t = np.linspace(0, 150, 150)
 
 ##############################################################################
 
@@ -101,7 +101,7 @@ S1 = N1 - I1 - R1
 beta1, gamma1 = 0.2, 1./10 
 
 # Rede de tempo.
-t1 = np.linspace(0, 365, 365)
+t1 = np.linspace(0, 100, 100)
 
 # Equações diferenciais do modelo SIR.
 def deriv(y1, t1, N1, beta1, gamma1):
@@ -334,7 +334,7 @@ ax.plot(t5, I5/100000000, 'r', alpha=0.5, lw=2, label='Infectado')
 ax.plot(t5, R5/100000000, 'g', alpha=0.5, lw=2, label='Recuperado e imune')
 ax.set_xlabel('Tempo /dias')
 ax.set_ylabel('Número (100.000.000s)')
-ax.set_ylim(0,100)
+ax.set_ylim(0,80)
 ax.yaxis.set_tick_params(length=0)
 ax.xaxis.set_tick_params(length=0)
 ax.grid(b=True, which='major', c='w', lw=2, ls='-')
@@ -345,6 +345,59 @@ for spine in ('top', 'right', 'bottom', 'left'):
 plt.show()
 
 ##############################################################################
+
+# Simulação número 6 (Infecção por piolho em uma escola).
+
+# População inicial fictícia.
+N6 = 7822785840 
+
+# Números iniciais de infectados e recuperados.
+I6, R6 = 46643798, 31156914
+
+# Sucetíveis a contaminação.
+S6 = N6 - I6 - R6
+
+# Taxas técnicas.
+beta6, gamma6 = 0.2, 0.64/10 
+
+# Rede de tempo.
+t6 = np.linspace(0, 150, 150)
+
+# Equações diferenciais do modelo SIR.
+def deriv(y6, t6, N6, beta6, gamma6):
+    S6, I6, R6 = y6
+    dSdt6 = -beta6 * S6 * I6 / N6
+    dIdt6 = beta6 * S6 * I6 / N6 - gamma6 * I6
+    dRdt6 = gamma6 * I6
+    return dSdt6, dIdt6, dRdt6
+
+# Condições inicias do vetor.
+y6 = S6, I6, R6
+
+# Integração do modelo de equações diferenciais do SIR na rede de tempo(t).
+ret6 = odeint(deriv, y6, t6, args=(N6, beta6, gamma6))
+S6, I6, R6 = ret6.T
+
+# Plotando a simulação.
+fig6 = plt.figure(facecolor='w')
+ax = fig6.add_subplot(111, facecolor='#dddddd', axisbelow=True)
+ax.plot(t6, S6/100000000, 'b', alpha=0.5, lw=2, label='Suscetível')
+ax.plot(t6, I6/100000000, 'r', alpha=0.5, lw=2, label='Infectado')
+ax.plot(t6, R6/100000000, 'g', alpha=0.5, lw=2, label='Recuperado e imune')
+ax.set_xlabel('Tempo /dias')
+ax.set_ylabel('Número (100.000.000ss)')
+ax.set_ylim(0,80)
+ax.yaxis.set_tick_params(length=0)
+ax.xaxis.set_tick_params(length=0)
+ax.grid(b=True, which='major', c='w', lw=2, ls='-')
+legend = ax.legend()
+legend.get_frame().set_alpha(0.5)
+for spine in ('top', 'right', 'bottom', 'left'):
+    ax.spines[spine].set_visible(False)
+plt.show()
+
+##############################################################################
+
 
 # Bibliografia:
     #https://www.ibge.gov.br/apps/populacao/projecao/; 
@@ -359,5 +412,6 @@ plt.show()
     #https://www.paho.org/pt/covid19
     #https://covid19.who.int/table
     #https://ciis.fmrp.usp.br/covid19/epcalc/public/index.html
+    #https://towardsdatascience.com/modelling-the-coronavirus-epidemic-spreading-in-a-city-with-python-babd14d82fa2
     
 ##############################################################################
