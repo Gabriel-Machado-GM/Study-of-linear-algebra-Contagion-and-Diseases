@@ -18,32 +18,32 @@ import matplotlib.pyplot as plt
 
 ##############################################################################
 
-# N = População total.
+# N = Populacao total.
 N = 1000
 
 ##############################################################################
 
-# I0, R0 = Número inicial de indivíduos infectados e recuperados respectivamente.
+# I0, R0 = Numero inicial de individuos infectados e recuperados respectivamente.
 I0, R0 = 1, 0
 
 ##############################################################################
 
-# S0 = Qualquer um é sucetível a infecção inicialmente, não há anticorpos. 
+# S0 = Qualquer um e suscetivel a infeccao inicialmente, nao ha anticorpos. 
 S0 = N - I0 - R0
 
 ##############################################################################
 
-# Beta = Taxa de Contágio, Gama = média da recuperação de um indivíduo(1/dias).
+# Beta = Taxa de Contagio, Gama = media da recuperacao de um individuo(1/dias).
 beta, gamma = 0.2, 1./10 
 
 ##############################################################################
 
-# Uma rede de espaço de tempo em dias.
+# Uma rede de espaco de tempo em dias.
 t = np.linspace(0, 150, 150)
 
 ##############################################################################
 
-# Equações diferenciais do modelo SIR. 
+# Equacoes diferenciais do modelo SIR. 
 def deriv(y, t, N, beta, gamma):
     S, I, R = y
     dSdt = -beta * S * I / N
@@ -53,18 +53,18 @@ def deriv(y, t, N, beta, gamma):
 
 ##############################################################################
 
-# Condições iniciais do vetor.
+# Condicoes iniciais do vetor.
 y0 = S0, I0, R0
 
 ##############################################################################
 
-# Integração do modelo de equações diferenciais do SIR na rede de tempo(t).
+# Integracao do modelo de equacoes diferenciais do SIR na rede de tempo(t).
 ret = odeint(deriv, y0, t, args=(N, beta, gamma))
 S, I, R = ret.T
 
 ##############################################################################
 
-# Coloque os dados em três curvas distintas para S(t), I(t) e R(t)
+# Coloque os dados em tres curvas distintas para S(t), I(t) e R(t)
 fig = plt.figure(facecolor='w')
 ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t, S/1000, 'b', alpha=0.5, lw=2, label='Suscetível')
@@ -83,27 +83,27 @@ for spine in ('top', 'right', 'bottom', 'left'):
 plt.show()
 
 ##############################################################################
-######################    SIMULAÇÕES     ####################################
+######################    SIMULACOES     ####################################
 ##############################################################################
 
-# Simulação número 1.
+# Simulacao numero 1.
 
-# População inicial fictícia.
+# Populacao inicial ficticia.
 N1 = 2000
 
-# Números iniciais de infectados e recuperados.
+# Numeros iniciais de infectados e recuperados.
 I1, R1 = 500, 0
 
-# Sucetíveis a contaminação.
+# Suscetiveis a contaminacao.
 S1 = N1 - I1 - R1
 
-# Taxas técnicas.
+# Taxas tecnicas.
 beta1, gamma1 = 0.2, 1./10 
 
 # Rede de tempo.
 t1 = np.linspace(0, 100, 100)
 
-# Equações diferenciais do modelo SIR.
+# Equacoes diferenciais do modelo SIR.
 def deriv(y1, t1, N1, beta1, gamma1):
     S1, I1, R1 = y1
     dSdt1 = -beta1 * S1 * I1 / N1
@@ -111,14 +111,14 @@ def deriv(y1, t1, N1, beta1, gamma1):
     dRdt1 = gamma1 * I1
     return dSdt1, dIdt1, dRdt1
 
-# Condições inicias do vetor.
+# Condicoes inicias do vetor.
 y1 = S1, I1, R1
 
-# Integração do modelo de equações diferenciais do SIR na rede de tempo(t).
+# Integracao do modelo de equacoes diferenciais do SIR na rede de tempo(t).
 ret1 = odeint(deriv, y1, t1, args=(N1, beta1, gamma1))
 S1, I1, R1 = ret1.T
 
-# Plotando a simulação.
+# Plotando a simulacao.
 fig1 = plt.figure(facecolor='w')
 ax = fig1.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t1, S1/1000, 'b', alpha=0.5, lw=2, label='Suscetível')
@@ -138,24 +138,24 @@ plt.show()
 
 ##############################################################################
 
-# Simulação número 2 (Infecção por piolho em uma escola).
+# Simulacao numero 2 (Infeccao por piolho em uma escola).
 
-# População inicial fictícia.
+# População inicial ficticia.
 N2 = 1000
 
-# Números iniciais de infectados e recuperados.
+# Numeros iniciais de infectados e recuperados.
 I2, R2 = 200, 0
 
-# Sucetíveis a contaminação.
+# Suscetíveis a contaminação.
 S2 = N2 - I2 - R2
 
-# Taxas técnicas.
+# Taxas tecnicas.
 beta2, gamma2 = 0.03, 2/10 
 
 # Rede de tempo.
 t2 = np.linspace(0, 50, 50)
 
-# Equações diferenciais do modelo SIR.
+# Equacoes diferenciais do modelo SIR.
 def deriv(y2, t2, N2, beta2, gamma2):
     S2, I2, R2 = y2
     dSdt2 = -beta2 * S2 * I2 / N2
@@ -163,14 +163,14 @@ def deriv(y2, t2, N2, beta2, gamma2):
     dRdt2 = gamma2 * I2
     return dSdt2, dIdt2, dRdt2
 
-# Condições inicias do vetor.
+# Condicoes inicias do vetor.
 y2 = S2, I2, R2
 
-# Integração do modelo de equações diferenciais do SIR na rede de tempo(t).
+# Integracao do modelo de equacoes diferenciais do SIR na rede de tempo(t).
 ret2 = odeint(deriv, y2, t2, args=(N2, beta2, gamma2))
 S2, I2, R2 = ret2.T
 
-# Plotando a simulação.
+# Plotando a simulacao.
 fig2 = plt.figure(facecolor='w')
 ax = fig2.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t2, S2/1000, 'b', alpha=0.5, lw=2, label='Suscetível')
@@ -190,24 +190,24 @@ plt.show()
 
 ##############################################################################
 
-# Simulação número 3 (Infecção por piolho em uma escola).
+# Simulacao nUmero 3 (InfecCAo por piolho em uma escola).
 
-# População inicial fictícia.
+# PopulaCAo inicial fictIcia.
 N3 = 100
 
-# Números iniciais de infectados e recuperados.
+# NUmeros iniciais de infectados e recuperados.
 I3, R3 = 2, 0
 
-# Sucetíveis a contaminação.
+# Suscetíveis a contaminação.
 S3 = N3 - I3 - R3
 
-# Taxas técnicas.
+# Taxas tecnicas.
 beta3, gamma3 = 0.3, 2/10 
 
 # Rede de tempo.
 t3 = np.linspace(0, 100, 100)
 
-# Equações diferenciais do modelo SIR.
+# Equacoes diferenciais do modelo SIR.
 def deriv(y3, t3, N3, beta3, gamma3):
     S3, I3, R3 = y3
     dSdt3 = -beta3 * S3 * I3 / N3
@@ -215,14 +215,14 @@ def deriv(y3, t3, N3, beta3, gamma3):
     dRdt3 = gamma3 * I3
     return dSdt3, dIdt3, dRdt3
 
-# Condições inicias do vetor.
+# Condicoes inicias do vetor.
 y3 = S3, I3, R3
 
-# Integração do modelo de equações diferenciais do SIR na rede de tempo(t).
+# Integracao do modelo de equacoes diferenciais do SIR na rede de tempo(t).
 ret3 = odeint(deriv, y3, t3, args=(N3, beta3, gamma3))
 S3, I3, R3 = ret3.T
 
-# Plotando a simulação.
+# Plotando a simulacao.
 fig3 = plt.figure(facecolor='w')
 ax = fig3.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t3, S3/100, 'b', alpha=0.5, lw=2, label='Suscetível')
@@ -242,24 +242,24 @@ plt.show()
 
 ##############################################################################
 
-# Simulação número 4, uma simulação básica do COVID no Brasil dia 21/10/2020.
+# Simulacao numero 4, uma simulacao basica do COVID no Brasil dia 21/10/2020.
 
-# População no Brasil
+# Populacao no Brasil
 N4 = 212205021 
 
-# Números iniciais de infectados e recuperados.
+# Numeros iniciais de infectados e recuperados.
 I4, R4 = 5276942, 4721593 
 
-# Sucetíveis a contaminação.
+# Suscetiveis a contaminacao.
 S4 = N4 - I4 - R4 
 
-# Taxas técnicas.
+# Taxas tecnicas.
 beta4, gamma4 = 0.93, 0.8/10 
 
 # Rede de tempo.
 t4 = np.linspace(0, 100, 100) 
 
-# Equações diferenciais do modelo SIR.
+# Equacoes diferenciais do modelo SIR.
 def deriv(y4, t4, N4, beta4, gamma4):
     S4, I4, R4 = y4
     dSdt4 = -beta4 * S4 * I4 / N4
@@ -267,14 +267,14 @@ def deriv(y4, t4, N4, beta4, gamma4):
     dRdt4 = gamma4 * I4
     return dSdt4, dIdt4, dRdt4
 
-# Condições inicias do vetor.
+# Condicoes inicias do vetor.
 y4 = S4, I4, R4
 
-# Integração do modelo de equações diferenciais do SIR na rede de tempo(t).
+# Integracao do modelo de equacoes diferenciais do SIR na rede de tempo(t).
 ret4 = odeint(deriv, y4, t4, args=(N4, beta4, gamma4))
 S4, I4, R4 = ret4.T
 
-# Plotando a simulação.
+# Plotando a simulacao.
 fig4 = plt.figure(facecolor='w')
 ax = fig4.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t4, S4/10000000, 'b', alpha=0.5, lw=2, label='Suscetível')
@@ -294,24 +294,24 @@ plt.show()
 
 ##############################################################################
 
-# Simulação número 5, uma simulação básica do COVID no mundo dia 02/11/2020.
+# Simulacao numero 5, uma simulacao basica do COVID no mundo dia 02/11/2020.
 
-# População no mundo
+# Populacao no mundo
 N5 = 7822785840 
 
-# Números iniciais de infectados e recuperados.
+# Numeros iniciais de infectados e recuperados.
 I5, R5 = 46643798, 31156914
 
-# Sucetíveis a contaminação.
+# Suscetiveis a contaminacao.
 S5 = N5 - I5 - R5 
 
-# Taxas técnicas.
+# Taxas tecnicas.
 beta5, gamma5 = 0.73, 0.64/10 
 
 # Rede de tempo.
 t5 = np.linspace(0, 100, 100) 
 
-# Equações diferenciais do modelo SIR.
+# Equacoes diferenciais do modelo SIR.
 def deriv(y5, t5, N5, beta5, gamma5):
     S5, I5, R5 = y5
     dSdt5 = -beta5 * S5 * I5 / N5
@@ -319,14 +319,14 @@ def deriv(y5, t5, N5, beta5, gamma5):
     dRdt5 = gamma5 * I5
     return dSdt5, dIdt5, dRdt5
 
-# Condições inicias do vetor.
+# Condicoes inicias do vetor.
 y5 = S5, I5, R5
 
-# Integração do modelo de equações diferenciais do SIR na rede de tempo(t).
+# Integracao do modelo de equacoes diferenciais do SIR na rede de tempo(t).
 ret5 = odeint(deriv, y5, t5, args=(N5, beta5, gamma5))
 S5, I5, R5 = ret5.T
 
-# Plotando a simulação.
+# Plotando a simulacao.
 fig5 = plt.figure(facecolor='w')
 ax = fig5.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t5, S5/100000000, 'b', alpha=0.5, lw=2, label='Suscetível')
@@ -346,24 +346,24 @@ plt.show()
 
 ##############################################################################
 
-# Simulação número 6, uma simulação básica do COVID no mundo dia 02/11/2020 com a quarentena obedecida
+# Simulacao numero 6, uma simulacao basica do COVID no mundo dia 02/11/2020 com a quarentena obedecida
 
-# População inicial fictícia.
+# Populacao inicial ficticia.
 N6 = 7822785840 
 
-# Números iniciais de infectados e recuperados.
+# Numeros iniciais de infectados e recuperados.
 I6, R6 = 46643798, 31156914
 
-# Sucetíveis a contaminação.
+# Suscetiveis a contaminacao.
 S6 = N6 - I6 - R6
 
-# Taxas técnicas.
+# Taxas tecnicas.
 beta6, gamma6 = 0.2, 0.64/10 
 
 # Rede de tempo.
 t6 = np.linspace(0, 150, 150)
 
-# Equações diferenciais do modelo SIR.
+# Equacoes diferenciais do modelo SIR.
 def deriv(y6, t6, N6, beta6, gamma6):
     S6, I6, R6 = y6
     dSdt6 = -beta6 * S6 * I6 / N6
@@ -371,14 +371,14 @@ def deriv(y6, t6, N6, beta6, gamma6):
     dRdt6 = gamma6 * I6
     return dSdt6, dIdt6, dRdt6
 
-# Condições inicias do vetor.
+# Condicoes inicias do vetor.
 y6 = S6, I6, R6
 
-# Integração do modelo de equações diferenciais do SIR na rede de tempo(t).
+# Integracao do modelo de equacoes diferenciais do SIR na rede de tempo(t).
 ret6 = odeint(deriv, y6, t6, args=(N6, beta6, gamma6))
 S6, I6, R6 = ret6.T
 
-# Plotando a simulação.
+# Plotando a simulacao.
 fig6 = plt.figure(facecolor='w')
 ax = fig6.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t6, S6/100000000, 'b', alpha=0.5, lw=2, label='Suscetível')
