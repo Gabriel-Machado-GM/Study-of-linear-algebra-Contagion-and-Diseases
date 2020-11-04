@@ -346,7 +346,7 @@ plt.show()
 
 ##############################################################################
 
-# Simulação número 6 (Infecção por piolho em uma escola).
+# Simulação número 6, uma simulação básica do COVID no mundo dia 02/11/2020 com a quarentena obedecida
 
 # População inicial fictícia.
 N6 = 7822785840 
@@ -400,6 +400,7 @@ plt.show()
 
 
 # Bibliografia:
+    #https://scipython.com/book/chapter-8-scipy/additional-examples/the-sir-epidemic-model/
     #https://www.ibge.gov.br/apps/populacao/projecao/; 
     #https://www.gazetadopovo.com.br/republica/breves/taxa-de-recuperacao-da-covid-19-e-maior-no-brasil-que-espanha-italia-e-eua/;
     #https://g1.globo.com/bemestar/coronavirus/noticia/2020/10/13/taxa-de-transmissao-da-covid-19-fica-abaixo-de-1-pela-terceira-semana-seguida-no-brasil-aponta-imperial-college.ghtml
