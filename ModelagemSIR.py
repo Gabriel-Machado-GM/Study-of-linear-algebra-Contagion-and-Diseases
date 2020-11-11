@@ -341,7 +341,7 @@ plt.show()
 N6 = 193900000 
 
 # Numeros iniciais de infectados e recuperados.
-I6, R6 = 1, 0
+I6, R6 = 4, 0
 
 # Suscetiveis a contaminacao.
 S6 = N6 - I6 - R6
