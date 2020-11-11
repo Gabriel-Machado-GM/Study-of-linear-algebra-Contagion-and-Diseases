@@ -335,6 +335,57 @@ plt.show()
 
 ##############################################################################
 
+# Simulacao numero 6, uma simulacao da H1N1 no Brasil em 2009.
+
+# Populacao inicial.
+N6 = 193900000 
+
+# Numeros iniciais de infectados e recuperados.
+I6, R6 = 1, 0
+
+# Suscetiveis a contaminacao.
+S6 = N6 - I6 - R6
+
+# Taxas tecnicas.
+beta6, gamma6 = 2.7, 2/10 
+
+# Rede de tempo.
+t6 = np.linspace(0, 60, 60)
+
+# Equacoes diferenciais do modelo SIR.
+def deriv(y6, t6, N6, beta6, gamma6):
+    S6, I6, R6 = y6
+    dSdt6 = -beta6 * S6 * I6 / N6
+    dIdt6 = beta6 * S6 * I6 / N6 - gamma6 * I6
+    dRdt6 = gamma6 * I6
+    return dSdt6, dIdt6, dRdt6
+
+# Condicoes inicias do vetor.
+y6 = S6, I6, R6
+
+# Integracao do modelo de equacoes diferenciais do SIR na rede de tempo(t).
+ret6 = odeint(deriv, y6, t6, args=(N6, beta6, gamma6))
+S6, I6, R6 = ret6.T
+
+# Plotando a simulacao.
+fig6 = plt.figure(facecolor='w')
+ax = fig6.add_subplot(111, facecolor='#dddddd', axisbelow=True)
+ax.plot(t6, S6/1000000, 'b', alpha=0.5, lw=2, label='Suscetível')
+ax.plot(t6, I6/1000000, 'r', alpha=0.5, lw=2, label='Infectado')
+ax.plot(t6, R6/1000000, 'g', alpha=0.5, lw=2, label='Recuperado e imune')
+ax.set_xlabel('Tempo /dias')
+ax.set_ylabel('Número (1.000.000s)')
+ax.set_ylim(0,200)
+ax.yaxis.set_tick_params(length=0)
+ax.xaxis.set_tick_params(length=0)
+ax.grid(b=True, which='major', c='w', lw=2, ls='-')
+legend = ax.legend()
+legend.get_frame().set_alpha(0.5)
+for spine in ('top', 'right', 'bottom', 'left'):
+    ax.spines[spine].set_visible(False)
+plt.show()
+
+##############################################################################
 
 # Bibliografia:
     #https://scipython.com/book/chapter-8-scipy/additional-examples/the-sir-epidemic-model/
@@ -351,7 +402,10 @@ plt.show()
     #https://covid19.who.int/table
     #https://ciis.fmrp.usp.br/covid19/epcalc/public/index.html
     #https://towardsdatascience.com/modelling-the-coronavirus-epidemic-spreading-in-a-city-with-python-babd14d82fa2
+    #https://www.ime.usp.br/~map/tcc/2015/Rafael%20Belmiro.pdf
     #http://scielo.iec.gov.br/scielo.php?script=sci_arttext&pid=S2176-62232010000200013
     #https://www.scielo.br/scielo.php?script=sci_arttext&pid=S2179-84512014000300003
+    #https://eadcampus.spo.ifsp.edu.br/pluginfile.php/197454/mod_resource/content/0/TCC%20ALINE%20DE%20OLIVEIRA%20VIEIRA-mesclado_rearranged.pdf
+    #http://www.blog.saude.gov.br/index.php/53845-10-anos-do-surto-global-de-h1n1
     
 ##############################################################################
