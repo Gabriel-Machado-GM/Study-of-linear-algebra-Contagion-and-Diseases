@@ -1,5 +1,7 @@
 import numpy as np
 
+
+
 print("Matrizes da Simulação 1")
 print("A:")
 Sim_1_A = np.matrix('0.07, 0, 0; 0.93, 0.2, 0; 0, 0.8, 1') 
@@ -57,3 +59,15 @@ print(Sim_7_A)
 print("U0:")
 Sim_7_U0 = np.matrix('7822785839; 1; 0 ')
 print(Sim_7_U0)
+
+res = [[0 for x in range(3)] for y in range(3)]  
+
+def mult(X,Y):
+# explicit for loops 
+    for i in range(len(X)): 
+        for j in range(len(Y[0])): 
+            for k in range(len(Y)): 
+            # resulted matrix 
+                res[i][j] += X[i][k] * Y[k][j] 
+                print (res) 
+            
