@@ -125,6 +125,8 @@ for spine in ('top', 'right', 'bottom', 'left'):
     ax.spines[spine].set_visible(False)
 plt.show()
 
+
+
 ##############################################################################
 
 # Simulacao numero 2, uma simulacao basica do COVID no mundo dia 02/11/2020.
