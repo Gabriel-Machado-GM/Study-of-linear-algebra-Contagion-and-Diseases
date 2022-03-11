@@ -5,6 +5,6 @@ Estudo realizado para análise do progresso do contágio de uma doença em uma p
 
 ## Competências:
 
--Python
--Excel
--Modelagem baseada em coceitos de Álgebra Linear
+* Python
++ Excel
+- Modelagem baseada em coceitos de Álgebra Linear
