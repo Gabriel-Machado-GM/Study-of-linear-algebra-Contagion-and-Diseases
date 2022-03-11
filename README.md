@@ -3,7 +3,7 @@
 ## Descrição:
 Estudo realizado para análise do progresso do contágio de uma doença em uma população
 
-##Competências:
+## Competências:
 
 -Python
 -Excel
