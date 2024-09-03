@@ -1,17 +1,15 @@
 # Estudo por Modelagem Epidemica
-Descrição:
-Estudo realizado para análise do progresso do contágio de uma doença em uma população
+Descrição: Estudo realizado para análise do progresso do contágio de uma doença em uma população
 
-Competências:
+## Competências:
 Python
 Excel
 Modelagem baseada em coceitos de Álgebra Linear
 
 ![2](Adicionar print do dashboard)
 
-
 # Dashboard de análise de dados da Covid-19
-Este é um projeto em que ensinamos a construir um Dashboard interativo para análise de dados do comportamento do Coronavírus no Brasil.
+Descrição: Contruimos um dashboard interativo para análise de dados do comportamento do Coronavírus no Brasil.
 O projeto é alimentado por uma base pública no formato csv. Para a criação do mapa, usamos a API do Mapbox.
 
 ## 🔧 Funções
@@ -24,7 +22,7 @@ O projeto é alimentado por uma base pública no formato csv. Para a criação d
 
 Para ver o projeto em tempo real:
 
-<a href = "https://covid-19-dash-asimov.herokuapp.com/"><img src="https://img.shields.io/badge/ASIMOV-Projeto%20em%20tempo%20real-lightgrey" target="_blank"></a> 
+((Subir o dash no HEROKU e adicionar link))
 
 ## 👨‍💻 Tecnologias Utilizadas
 
