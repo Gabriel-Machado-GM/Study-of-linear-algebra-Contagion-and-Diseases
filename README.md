@@ -1,12 +1,7 @@
 # Estudo por Modelagem Epidemica
 Descrição: Estudo realizado para análise do progresso do contágio de uma doença em uma população
 
-## Competências:
-Python
-Excel
-Modelagem baseada em coceitos de Álgebra Linear
-
-![2](Adicionar print do dashboard)
+((Adicionar print do dashboard / Modelagem))
 
 # Dashboard Covid-19
 Descrição: Contruimos um dashboard interativo para análise de dados do comportamento do Coronavírus no Brasil.
@@ -24,7 +19,7 @@ Para ver o projeto em tempo real:
 
 ((Subir o dash no HEROKU e adicionar link))
 
-## 👨‍💻 Tecnologias Utilizadas
+## 👨‍💻 Competências & Tecnologias Utilizadas
 
 Utilizando as bibliotecas python:
 > - Dash
