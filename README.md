@@ -8,7 +8,7 @@ Modelagem baseada em coceitos de Álgebra Linear
 
 ![2](Adicionar print do dashboard)
 
-# Dashboard de análise de dados da Covid-19
+# Dashboard Covid-19
 Descrição: Contruimos um dashboard interativo para análise de dados do comportamento do Coronavírus no Brasil.
 O projeto é alimentado por uma base pública no formato csv. Para a criação do mapa, usamos a API do Mapbox.
 
@@ -26,9 +26,12 @@ Para ver o projeto em tempo real:
 
 ## 👨‍💻 Tecnologias Utilizadas
 
-Utilizando apenas **PYTHON** e as bibliotecas:
+Utilizando as bibliotecas python:
 > - Dash
 > - Dash Bootstrap Components
 > - Plotly
+Outros conhecimentos:
+> - Excel
+> - Modelagem baseada em coceitos de Álgebra Linear
 
 <p align="center">Copyright © 2022 Asimov Academy</p>
