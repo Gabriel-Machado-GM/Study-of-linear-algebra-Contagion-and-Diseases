@@ -7,11 +7,11 @@ Descrição: Estudo realizado para análise do progresso do contágio de uma doe
 Descrição: Contruimos um dashboard interativo para análise de dados do comportamento do Coronavírus no Brasil.
 O projeto é alimentado por uma base pública no formato csv. Para a criação do mapa, usamos a API do Mapbox.
 
-## 🔧 Funções
+## 🔧 Funcionalidades
 
-- Analisar o comportamento da Covid-19 no Brasil
-- Obter as informações por região e data
-- Navegação por um gráfico em formato de mapa 
+- Estudar o comportamento da Covid-19 no Brasil
+- Segmentar as informações por região e por data
+- Navegação interativa por um gráfico em formato de mapa 
 
 ## 💻 Projeto
 
@@ -25,6 +25,7 @@ Utilizando as bibliotecas python:
 > - Dash
 > - Dash Bootstrap Components
 > - Plotly
+
 Outros conhecimentos:
 > - Excel
 > - Modelagem baseada em coceitos de Álgebra Linear
