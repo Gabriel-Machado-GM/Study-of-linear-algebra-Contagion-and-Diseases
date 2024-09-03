@@ -1,4 +1,12 @@
-![2](https://user-images.githubusercontent.com/63136680/171272633-639af188-81c2-4575-81d5-c4092fe29328.jpg)
+Estudo por Modelagem Epidemica
+Descrição:
+Estudo realizado para análise do progresso do contágio de uma doença em uma população
+
+Competências:
+Python
+Excel
+Modelagem baseada em coceitos de Álgebra Linear
+![2](Adicionar print do dashboard)
 
 
 # Dashboard de análise de dados da Covid-19
