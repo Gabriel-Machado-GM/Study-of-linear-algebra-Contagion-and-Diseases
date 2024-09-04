@@ -29,5 +29,3 @@ Utilizando as bibliotecas python:
 Outros conhecimentos:
 > - Excel
 > - Modelagem baseada em coceitos de Álgebra Linear
-
-<p align="center">Copyright © 2022 Asimov Academy</p>
