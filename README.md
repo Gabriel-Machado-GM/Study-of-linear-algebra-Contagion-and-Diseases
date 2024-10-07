@@ -1,31 +1,32 @@
-# Estudo por Modelagem Epidemica
-Descrição: Estudo realizado para análise do progresso do contágio de uma doença em uma população
+# Epidemic Modeling Study
 
-((Adicionar print do dashboard / Modelagem))
+Description: This study analyzes the progression of disease contagion within a population.
 
-# Dashboard Covid-19
-Descrição: Contruimos um dashboard interativo para análise de dados do comportamento do Coronavírus no Brasil.
-O projeto é alimentado por uma base pública no formato csv. Para a criação do mapa, usamos a API do Mapbox.
+((Add dashboard screenshot / Modeling))
 
-## 🔧 Funcionalidades
+# Covid-19 Dashboard
 
-- Estudar o comportamento da Covid-19 no Brasil
-- Segmentar as informações por região e por data
-- Navegação interativa por um gráfico em formato de mapa 
+Description: We have created an interactive dashboard to analyze the data on the behavior of the Coronavirus in Brazil. The project is powered by a public CSV dataset. For map creation, we used the Mapbox API.
 
-## 💻 Projeto
+## 🔧 Features
 
-Para ver o projeto em tempo real:
+- Study the behavior of Covid-19 in Brazil
+- Segment information by region and date
+- Interactive navigation through a map-based graph
 
-((Subir o dash no HEROKU e adicionar link))
+## 💻 Project
 
-## 👨‍💻 Competências & Tecnologias Utilizadas
+To see the project in real-time:
 
-Utilizando as bibliotecas python:
-> - Dash
-> - Dash Bootstrap Components
-> - Plotly
+((Deploy the dashboard on HEROKU and add link))
 
-Outros conhecimentos:
-> - Excel
-> - Modelagem baseada em coceitos de Álgebra Linear
+## 👨‍💻 Skills & Technologies Used
+
+Using Python libraries:
+- Dash
+- Dash Bootstrap Components
+- Plotly
+
+Other knowledge:
+- Excel
+- Modeling based on Linear Algebra concepts
