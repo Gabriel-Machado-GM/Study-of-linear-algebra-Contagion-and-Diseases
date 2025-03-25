@@ -1,12 +1,12 @@
 # Epidemic Modeling Study
 
-Description: This study analyzes with Linear Algebra the progression of disease contagion within a population.
+This study analyzes with Linear Algebra the progression of disease contagion within a population.
 
 ((Add dashboard screenshot / Modeling) :/ )
 
 # Covid-19 Dashboard
 
-Description: We have created an interactive dashboard to analyze the data on the behavior of the Coronavirus in Brazil. The project is powered by a public CSV dataset. For map creation, we used the Mapbox API.
+We have created an interactive dashboard to analyze the data on the behavior of the Coronavirus in Brazil. The project is powered by a public CSV dataset. For map creation, we used the Mapbox API.
 
 ## 🔧 Features
 
