@@ -1,8 +1,8 @@
 # Epidemic Modeling Study
 
-Description: This study analyzes the progression of disease contagion within a population.
+Description: This study analyzes with Linear Algebra the progression of disease contagion within a population.
 
-((Add dashboard screenshot / Modeling))
+((Add dashboard screenshot / Modeling) :/ )
 
 # Covid-19 Dashboard
 
